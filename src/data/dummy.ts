@@ -1,51 +1,60 @@
+// ========================================================================
+// ICON LEGEND
+// All icons now use valid lucide-react component names (PascalCase)
+// ========================================================================
+
+// ------------------------------
 // SIDEBAR LINKS
+// ------------------------------
 
 export const sidebarLinks = [
   {
-    section: "Dashboard",
+    section: "DASHBOARD",
     links: [
-      { name: "Ecommerce", path: "/dashboard", icon: "shopping-bag" },
+      { name: "Ecommerce", path: "/dashboard", icon: "ShoppingBag" },
     ],
   },
   {
-    section: "Pages",
+    section: "PAGES",
     links: [
-      { name: "Orders", path: "/orders", icon: "shopping-cart" },
-      { name: "Employees", path: "/employees", icon: "users" },
-      { name: "Customers", path: "/customers", icon: "user-check" },
+      { name: "Orders", path: "/orders", icon: "ShoppingCart" },
+      { name: "Employees", path: "/employees", icon: "Users" },
+      { name: "Customers", path: "/customers", icon: "UserCheck" },
     ],
   },
   {
-    section: "Apps",
+    section: "APPS",
     links: [
-      { name: "Calendar", path: "/apps/calendar", icon: "calendar" },
-      { name: "Kanban", path: "/apps/kanban", icon: "kanban" },
-      { name: "Editor", path: "/apps/editor", icon: "edit" },
-      { name: "Color Picker", path: "/apps/color-picker", icon: "palette" },
+      { name: "Calendar", path: "/apps/calendar", icon: "CalendarDays" },
+      { name: "Kanban", path: "/apps/kanban", icon: "Kanban" },
+      { name: "Editor", path: "/apps/editor", icon: "FileEdit" },
+      { name: "Color Picker", path: "/apps/color-picker", icon: "Palette" },
     ],
   },
   {
-    section: "Charts",
+    section: "CHARTS",
     links: [
-      { name: "Line", path: "/charts/line", icon: "trending-up" },
-      { name: "Area", path: "/charts/area", icon: "area-chart" },
-      { name: "Bar", path: "/charts/bar", icon: "bar-chart" },
-      { name: "Pie", path: "/charts/pie", icon: "pie-chart" },
-      { name: "Financial", path: "/charts/financial", icon: "candlestick" },
-      { name: "Color Mapping", path: "/charts/color-mapping", icon: "layers" },
-      { name: "Pyramid", path: "/charts/pyramid", icon: "triangle" },
-      { name: "Stacked", path: "/charts/stacked", icon: "stack" },
+      { name: "Line", path: "/charts/line", icon: "TrendingUp" },
+      { name: "Area", path: "/charts/area", icon: "AreaChart" },
+      { name: "Bar", path: "/charts/bar", icon: "BarChart3" },
+      { name: "Pie", path: "/charts/pie", icon: "PieChart" },
+      { name: "Financial", path: "/charts/financial", icon: "CandlestickChart" },
+      { name: "Color Mapping", path: "/charts/color-mapping", icon: "Layers" },
+      { name: "Pyramid", path: "/charts/pyramid", icon: "Triangle" },
+      { name: "Stacked", path: "/charts/stacked", icon: "AlignVerticalSpaceAround" },
     ],
   },
 ];
 
-// EARNINGS CARDS
+// ------------------------------
+// EARNING CARDS
+// ------------------------------
 
 export const earningCards = [
   {
     title: "Earnings",
     amount: "$63,448.78",
-    icon: "dollar-sign",
+    icon: "DollarSign",
     iconBg: "#E0F7FA",
     iconColor: "#00ACC1",
   },
@@ -53,7 +62,7 @@ export const earningCards = [
     title: "Customers",
     amount: "39,354",
     percentage: "-4%",
-    icon: "users",
+    icon: "Users",
     iconBg: "#E8F5E9",
     iconColor: "#43A047",
   },
@@ -61,7 +70,7 @@ export const earningCards = [
     title: "Products",
     amount: "4,396",
     percentage: "+23%",
-    icon: "box",
+    icon: "Box",
     iconBg: "#FFF8E1",
     iconColor: "#FDD835",
   },
@@ -69,13 +78,15 @@ export const earningCards = [
     title: "Sales",
     amount: "423,39",
     percentage: "+38%",
-    icon: "bar-chart",
+    icon: "BarChart3",
     iconBg: "#FFF3E0",
     iconColor: "#FB8C00",
   },
 ];
 
-// REVENUE UPDATES
+// ------------------------------
+// REVENUE DATA
+// ------------------------------
 
 export const revenueData = {
   budget: "$93,438",
@@ -103,7 +114,7 @@ export const recentTransactions = [
     title: "Paypal Transfer",
     amount: "+$350",
     status: "Added",
-    icon: "wallet",
+    icon: "Wallet",
     iconColor: "#00ACC1",
     iconBg: "#E0F7FA",
   },
@@ -111,7 +122,7 @@ export const recentTransactions = [
     title: "Wallet Payment",
     amount: "-$560",
     status: "Bill",
-    icon: "shield",
+    icon: "Shield",
     iconColor: "#4CAF50",
     iconBg: "#E8F5E9",
   },
@@ -119,7 +130,7 @@ export const recentTransactions = [
     title: "Credit Card Refund",
     amount: "+$350",
     status: "Reversed",
-    icon: "credit-card",
+    icon: "CreditCard",
     iconColor: "#FDD835",
     iconBg: "#FFF8E1",
   },
@@ -127,7 +138,7 @@ export const recentTransactions = [
     title: "Bank Transfer",
     amount: "+$350",
     status: "Added",
-    icon: "arrow-up-right",
+    icon: "ArrowUpRight",
     iconColor: "#E57373",
     iconBg: "#FFEBEE",
   },
@@ -142,27 +153,27 @@ export const weeklyStats = [
     title: "Top Sales",
     amount: "-$560",
     desc: "Johnathan Doe",
-    icon: "shopping-cart",
+    icon: "ShoppingCart",
     iconBg: "#FB9678",
   },
   {
     title: "Best Seller",
     amount: "+$230",
     desc: "MaterialPro Admin",
-    icon: "star",
+    icon: "Star",
     iconBg: "#FDD835",
   },
   {
     title: "Most Commented",
     amount: "+$156",
     desc: "Ample Admin",
-    icon: "message-circle",
+    icon: "MessageCircle",
     iconBg: "#00C292",
   },
 ];
 
 // ------------------------------
-// PRODUCTS PERFORMANCE
+// PRODUCT PERFORMANCE
 // ------------------------------
 
 export const productPerformance = [
@@ -293,15 +304,9 @@ export const kanbanData = {
     { id: "t1", title: "Design login page" },
     { id: "t2", title: "Update dashboard widgets" },
   ],
-  inProgress: [
-    { id: "p1", title: "Build Kanban board UI" },
-  ],
-  testing: [
-    { id: "test1", title: "Test user onboarding flow" },
-  ],
-  done: [
-    { id: "d1", title: "Fix table pagination bug" },
-  ],
+  inProgress: [{ id: "p1", title: "Build Kanban board UI" }],
+  testing: [{ id: "test1", title: "Test user onboarding flow" }],
+  done: [{ id: "d1", title: "Fix table pagination bug" }],
 };
 
 // ------------------------------
@@ -328,66 +333,79 @@ export const themeColors = [
 ];
 
 // ------------------------------
-// USER PROFILE (For Navbar Dropdown)
+// USER PROFILE
 // ------------------------------
+
 export const userProfileData = {
   name: "Michael Roberts",
   email: "michael@shoppy.com",
   role: "Administrator",
-  avatar: "https://i.pravatar.cc/150?img=3", 
+  avatar: "https://i.pravatar.cc/150?img=3",
 };
 
 // ------------------------------
-// CHAT DATA (For Navbar Dropdown)
+// CHAT DATA
 // ------------------------------
+
 export const chatData = [
   {
     image: "https://i.pravatar.cc/150?img=12",
     message: "Roman Joined the Team!",
     desc: "Congratulate him",
     time: "9:08 AM",
+    icon: "MessageCircle",
   },
   {
     image: "https://i.pravatar.cc/150?img=5",
     message: "New message received",
     desc: "Salma sent you new message",
     time: "11:56 AM",
+    icon: "Mail",
   },
   {
     image: "https://i.pravatar.cc/150?img=3",
     message: "New Payment received",
     desc: "Check your earnings",
     time: "4:39 AM",
+    icon: "DollarSign",
   },
 ];
 
 // ------------------------------
-// CART DATA (For Navbar Dropdown)
+// CART DATA
 // ------------------------------
+
 export const cartData = [
   {
-    image: "https://cdn.shopclues.com/images1/thumbnails/104158/320/320/148648730-104158193-1592481791.jpg",
+    image:
+      "https://cdn.shopclues.com/images1/thumbnails/104158/320/320/148648730-104158193-1592481791.jpg",
     name: "Butterscotch Ice Cream",
     category: "Milk Product",
     price: "$250",
+    icon: "ShoppingCart",
   },
   {
-    image: "https://cdn.shopclues.com/images1/thumbnails/104158/320/320/148648730-104158193-1592481791.jpg",
+    image:
+      "https://cdn.shopclues.com/images1/thumbnails/104158/320/320/148648730-104158193-1592481791.jpg",
     name: "Supreme Fresh Tomato",
     category: "Vegetable Item",
     price: "$450",
+    icon: "ShoppingBag",
   },
   {
-    image: "https://cdn.shopclues.com/images1/thumbnails/104158/320/320/148648730-104158193-1592481791.jpg",
+    image:
+      "https://cdn.shopclues.com/images1/thumbnails/104158/320/320/148648730-104158193-1592481791.jpg",
     name: "Red Color Candy",
     category: "Food Item",
     price: "$190",
+    icon: "Candy",
   },
 ];
 
 // ------------------------------
-// SPARKLINE CHARTS (For Dashboard Cards)
+// SPARKLINE DATA
 // ------------------------------
+
 export const sparklineAreaData = [
   { x: 1, yval: 2 },
   { x: 2, yval: 6 },
@@ -395,3 +413,4 @@ export const sparklineAreaData = [
   { x: 4, yval: 5 },
   { x: 5, yval: 10 },
 ];
+
