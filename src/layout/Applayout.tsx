@@ -8,7 +8,7 @@ const AppLayout = () => {
     <div className="flex h-screen w-screen overflow-hidden bg-slate-50 dark:bg-black">
       
       {/* Sidebar: Fixed width */}
-      <Sidebar />
+      <Sidebar/>
 
       {/* 2. Main Area: 'flex-1' forces it to fill ALL remaining space */}
       {/* REMOVED 'p-5' here. That was your bug. */}
