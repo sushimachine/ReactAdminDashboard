@@ -1,10 +1,9 @@
 import Applayout from './layout/Applayout'
 import './App.css'
-import Cart from './components/cart'
 function App() {
 
   return (
-    <Cart/>
+    <Applayout/>
   )
 }
 
