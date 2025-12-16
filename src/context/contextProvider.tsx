@@ -1,16 +1,6 @@
 import { createContext, useContext, useState } from 'react';
 import type { ReactNode } from 'react';
 
-interface StateContextType {
-  activeMenu: boolean;
-  setActiveMenu: React.Dispatch<React.SetStateAction<boolean>>;
-  isClicked: typeof initialState;
-  setIsClicked: React.Dispatch<React.SetStateAction<typeof initialState>>;
-  handleClick: (clicked: string) => void;
-  screenSize: number | undefined;
-  setScreenSize: React.Dispatch<React.SetStateAction<number | undefined>>;
-}
-
 const initialState = {
   chat : false,
   cart : false,
@@ -20,13 +10,30 @@ const initialState = {
 
 const StateContext = createContext<StateContextType | undefined>(undefined);
 
+type ClickedKey = keyof typeof initialState;
+
+interface StateContextType {
+  activeMenu: boolean;
+  setActiveMenu: React.Dispatch<React.SetStateAction<boolean>>;
+  isClicked: typeof initialState;
+  setIsClicked: React.Dispatch<React.SetStateAction<typeof initialState>>;
+  handleClick: (clicked: ClickedKey) => void;
+  screenSize: number | undefined;
+  setScreenSize: React.Dispatch<React.SetStateAction<number | undefined>>;
+  // closeAll : (clicked: ClickedKey) => void;
+}
 export const ContextProvider = ({ children }: { children: ReactNode }) => {
   const [activeMenu, setActiveMenu] = useState<boolean>(true);
   const [isClicked, setIsClicked] = useState(initialState);
   const [screenSize, setScreenSize] = useState<number | undefined>(undefined);
+  // const [closeIcons, setCloseIcons] = useState(initialState)
 
-  const handleClick = (clicked: string) => {
-    setIsClicked({ ...initialState, [clicked]: true })
+  
+  const handleClick = (clicked: ClickedKey) => {
+    setIsClicked(prev => ({
+      ...initialState,
+      [clicked]: !prev[clicked],
+    }))
   }
 
   return (
@@ -39,6 +46,7 @@ export const ContextProvider = ({ children }: { children: ReactNode }) => {
         handleClick,
         screenSize,
         setScreenSize,
+        // closeAll
       }} >
         {children}
       </StateContext.Provider>
