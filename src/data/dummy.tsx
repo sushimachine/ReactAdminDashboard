@@ -1,21 +1,15 @@
-// ========================================================================
-// DASHBOARD DATA (TypeScript Version)
-// ========================================================================
+import { HiCurrencyDollar } from "react-icons/hi";
+import { BsShieldFillCheck } from "react-icons/bs";
+import { TfiCreditCard } from "react-icons/tfi";
 
 export const gridOrderImage = (props: any) => (
-  // NOTE: In a real app, this renderer belongs in the Component file, not data file.
-  // Keeping logic out of here to ensure this file is pure JSON/Data.
   props.ProductImage
 );
 
 export const gridOrderStatus = (props: any) => (
-  // NOTE: Logic moved to component
   props.Status
 );
 
-// ------------------------------
-// SIDEBAR LINKS
-// ------------------------------
 export const sidebarLinks = [
   {
     title: "DASHBOARD",
@@ -58,6 +52,29 @@ export const sidebarLinks = [
 // ------------------------------
 // USER PROFILE
 // ------------------------------
+export const userProfile = [
+  {
+    icon: <HiCurrencyDollar />,
+    title: 'My Profile',
+    desc: 'Account Settings',
+    iconColor: '#03C9D7',
+    iconBg: '#E5FAFB',
+  },
+  {
+    icon: <BsShieldFillCheck/>,
+    title: 'My Inbox',
+    desc: 'Messages & Emails',
+    iconColor: 'rgb(0, 194, 146)',
+    iconBg: 'rgb(235, 250, 242)',
+  },
+  {
+    icon: <TfiCreditCard />,
+    title: 'My Tasks',
+    desc: 'To-do and Daily Tasks',
+    iconColor: 'rgb(255, 244, 229)',
+    iconBg: 'rgb(254, 201, 15)',
+  },
+];
 export const userProfileData = {
   name: "Michael Roberts",
   email: "michael@shoppy.com",
@@ -139,10 +156,32 @@ export const cartData = [
 ];
 
 export const notifications = [
-  { id: 1, message: "New order received", time: "2m ago", unread: true },
-  { id: 2, message: "Server backup completed", time: "1h ago", unread: false },
-  { id: 3, message: "New customer registered", time: "5h ago", unread: false },
+  {
+    id: 1,
+    image: "https://randomuser.me/api/portraits/women/44.jpg",
+    title: "Roman Joined the Team!",
+    message: "Congratulate him",
+  },
+  {
+    id: 2,
+    image: "https://randomuser.me/api/portraits/men/32.jpg",
+    title: "New message received",
+    message: "Salma sent you new message",
+  },
+  {
+    id: 3,
+    image: "https://randomuser.me/api/portraits/men/45.jpg",
+    title: "New Payment received",
+    message: "Check your earnings",
+  },
+  {
+    id: 4,
+    image: "https://randomuser.me/api/portraits/men/67.jpg",
+    title: "Jolly completed tasks",
+    message: "Assign her new tasks",
+  },
 ];
+
 
 // ------------------------------
 // DASHBOARD STATS
