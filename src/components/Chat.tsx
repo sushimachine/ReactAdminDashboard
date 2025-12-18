@@ -7,9 +7,9 @@ import { Button } from './ui/button'
 const Chat = () => {
     const { handleClick } = useStateContext();
   return (
-    <div className='absolute z-50 shadow-xl h-3/4 w-96 p-5 bg-white right-10 top-20'>
+<div className="fixed z-50 shadow-xl bg-white p-5 max-h-[80vh] inset-x-0 mx-auto w-[90vw] sm:inset-x-auto sm:right-5 sm:w-[350px] md:w-[400px] top-16">
       <div className='flex w-full justify-between items-center p-7 pl-5 pb-0'>
-        <h1 className='font-semibold text-[20px]'>Shopping Cart</h1>
+        <h1 className='font-semibold text-[20px]'>Messages</h1>
         <button 
             type="button"
             onClick={() => handleClick("chat")} 
@@ -22,7 +22,7 @@ const Chat = () => {
         {chatData.map((chat, index) => (
             <div key={index}>
               <div className='flex object-cover gap-4 items-center p-3'>
-                  <img src={chat.image} className='rounded-full w-16 h-16' alt="" />
+                  <img src={chat.image} className='w-12 h-12 rounded-full shrink-0' alt="" />
                   <div className='flex flex-col w-full text-left items-start gap-2'>
                       <h1 className='text-[18px] font-serif'>{chat.message}</h1>
                       <p>{chat.desc}</p>
