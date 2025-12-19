@@ -1,43 +1,62 @@
-// import React from 'react'
+import React from 'react'
 import { sidebarLinks } from "@/data/dummy"
+import { X } from "lucide-react"; // Import the Close icon
 import * as Icons from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { useStateContext } from "@/context/contextProvider";
 
-
 const Sidebar = () => {
+  const { activeMenu, setActiveMenu } = useStateContext()
 
-  const {activeMenu} = useStateContext()
   const IconRender = ({ name }: { name: string }) => {
     const Icon = (Icons as any)[name]
     return Icon ? <Icon className="h-5 w-5"/> : null;
   }
 
   return (
-    <div className={`${activeMenu ? 'w-65' : 'w-0'} transition-all duration-300 overflow-hidden`}>
-      <div className={`hidden md:flex flex-col h-screen overflow-y-auto scrollbar-thin scrollbar-thin scrollbar-thumb-gray-500
-    scrollbar-track-transparent w-65 p-8 border-r bg-card`}>
-        {sidebarLinks.map((element) => (
-          <div key={element.title} className="flex flex-col mt-4 gap-5 items-start left-0">
-              <h1 className="left-2 font-semibold text-[20x]">{element.title}</h1>
-              {element.links.map((link) => (
-                <div key={link.path} className="flex flex-col">
-                  <NavLink to={link.path} className={({ isActive }) => 
-      isActive ? "flex flex-row p-2 bg-[#ADEED9] cursor-pointer text-[18px] gap-2 w-50 rounded-sm" : "flex flex-row p-2 cursor-pointer text-[18px] gap-2 w-50 hover:bg-gray-50 rounded-sm"
-    }>
-                    <IconRender name={link.icon} />
-                    <h2>{link.name}</h2>
-                  </NavLink>
-                </div>
-              ))}
-          </div>
-        ))}
-        <div className="h-32 overflow-y-auto scrollbar-thin scrollbar-thumb-black">
-    {Array.from({ length: 50 }).map((_, i) => (
-      <p key={i}>Item {i}</p>
-    ))}
-  </div>
+    <div className={`
+        fixed inset-y-0 left-0 z-50 bg-white border-r transition-all duration-300
+        ${activeMenu ? 'w-72' : 'w-0'} 
+        md:static 
+        ${!activeMenu && 'md:hidden'}
+    `}>
+      <div className="h-full flex flex-col overflow-y-auto scrollbar-thin scrollbar-thumb-gray-500 pb-10">
+        
+        <div className="flex justify-between items-center p-4 border-b">
+            <h1 className="font-bold text-xl">Dashboard</h1>
+            
+            <button 
+                type="button"
+                onClick={() => setActiveMenu(false)}
+                className="p-2 hover:bg-gray-100 rounded-full md:hidden"
+            >
+                <X className="w-6 h-6" />
+            </button>
+        </div>
 
+        <div className="p-4">
+          {sidebarLinks.map((element) => (
+            <div key={element.title} className="mt-4">
+               <h1 className="text-gray-400 uppercase font-bold text-sm mb-3">
+                 {element.title}
+               </h1>
+               {element.links.map((link) => (
+                 <NavLink 
+                   key={link.name}
+                   to={`/${link.path}`}
+                   onClick={() => setActiveMenu(false)} 
+                   className={({ isActive }) => 
+                     `flex items-center gap-4 pl-4 pt-3 pb-2.5 rounded-lg text-md m-2 
+                     ${isActive ? "bg-[#ADEED9] text-black" : "text-gray-700 hover:bg-gray-100"}`
+                   }
+                 >
+                   <IconRender name={link.icon} />
+                   <span className="capitalize">{link.name}</span>
+                 </NavLink>
+               ))}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   )

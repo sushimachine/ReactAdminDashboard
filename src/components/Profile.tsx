@@ -7,7 +7,9 @@ const Profile = () => {
   const { handleClick } = useStateContext();
 
   return (
-    <div className='absolute z-50 shadow-xl h-3/4 w-96 p-5 bg-white right-10 top-20 flex flex-col'>
+    <div className='absolute z-50 shadow-xl max-h-[80vh]
+ w-[80vw] sm:w-96 md:w-[420px]
+ p-5 bg-white right-8 top-20 object-contain'>
       
       <div className='flex w-full justify-between items-center p-7 pl-5 pb-5'>
         <h1 className='font-semibold text-[20px]'>User Profile</h1>
